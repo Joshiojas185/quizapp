@@ -51,7 +51,7 @@ io.on('connection', (socket) => {
         rooms[roomName].players.push({ id: socket.id, name: playerName });
     
         // Check if the player is "tcshost" and add them as a host
-        if (playerName === "tcshost") {
+        if (playerName === "host") {
             rooms[roomName].hosts.push(socket.id); // Add to hosts array
             io.to(socket.id).emit('hostAssigned'); // Notify the tcshost that they are a host
     
